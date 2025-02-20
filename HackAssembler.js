@@ -84,8 +84,8 @@ function main() {
     const file = fs.readFileSync(process.argv[2], "utf8");
 
     const path = process.argv[2].split("/");
-    const fileName = path[path.length-1].slice(-4);
-
+    const fileName = path[path.length-1].slice(0, -4);
+    
     const commands = getCommands(file); 
     replaceSymbols(commands);
     const binCode = parseCommands(commands);
